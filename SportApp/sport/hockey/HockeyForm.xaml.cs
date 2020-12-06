@@ -20,19 +20,21 @@ namespace SportApp.sport.hockey {
 	public partial class HockeyForm : Window, ITeamForm {
 
 		private bool _isSaved;
+		private bool _update;
 
 		public HockeyForm() {
 			InitializeComponent();
 			_isSaved = false;
+			_update = false;
 		}
 
 		public void showForm() {
 			ShowDialog();
 		}
 
-		public bool ValidInputs() {
+		public bool ValidInputs(bool update) {
 			try {
-				if (GetTeamForm().ValidInputs()) {
+				if (GetTeamForm().ValidInputs(update)) {
 					NewTeam();
 					return true;
 				}
@@ -74,8 +76,27 @@ namespace SportApp.sport.hockey {
 		}
 
 		public void SaveTeam(object sender, RoutedEventArgs e) {
-			_isSaved = true;
-			Close();
+			try {
+				if (ValidInputs(_update)) {
+					_isSaved = true;
+					Close();
+				}
+				else {
+					MessageBox.Show("Invalid inputs!", "Wrong input", MessageBoxButton.OK, MessageBoxImage.Error);
+				}
+			}
+			catch (Exception exception) {
+				MessageBox.Show(exception.Message, "Wrong input", MessageBoxButton.OK, MessageBoxImage.Error);
+
+			}
+		}
+
+		public void fillForm(Team team) {
+			_update = true;
+			GetTeamForm().fillForm(team);
+			HockeyTeam hockeyTeam = (HockeyTeam)team;
+			WinsOtInput.Text = hockeyTeam.WinsInOvertime.ToString();
+			LosesOtInput.Text = hockeyTeam.LosesInOvertime.ToString();
 		}
 	}
 }

@@ -18,16 +18,17 @@ namespace SportApp.command {
 			ITeamForm form = SportFactory.GetInstance().CreateTeamForm();
 			form.showForm();
 			if (form.IsSaved()) {
-				if (form.ValidInputs()) {
+				if (form.ValidInputs(false)) {
 					Sport sport = SportFactory.GetInstance().GetSport();
-					sport.AddNewTeam(form.NewTeam());
+					Team team = form.NewTeam();
+					sport.AddNewTeam(team);
 				}
 				else {
-					throw new CrudException("Invalid inputs!");
+					throw new CrudException("Invalid inputs !!!");
 				}
 			}
 			else {
-				throw new CrudException("Creation new team operation was canceled.");
+				throw new CrudException("Creation of new team operation was canceled.");
 			}
 		}
 

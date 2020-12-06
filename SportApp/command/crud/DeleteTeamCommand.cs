@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SportApp.sport.general;
 
 namespace SportApp.command {
 	public class DeleteTeamCommand : CrudCommand {
@@ -12,15 +13,17 @@ namespace SportApp.command {
 		}
 
 		protected override void ExecuteAction() {
-			throw new NotImplementedException();
+			Team team = MainWindow.GetInstance().SelectedTeam();
+			Sport sport = SportFactory.GetInstance().GetSport();
+			sport.DeleteTeam(team);
 		}
 
 		protected override string SuccessMessage() {
-			throw new NotImplementedException();
+			return "Team was successfully deleted.";
 		}
 
 		protected override string ErrorMessage() {
-			throw new NotImplementedException();
+			return "Cannot delete team.";
 		}
 	}
 }

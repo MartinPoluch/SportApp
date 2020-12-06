@@ -47,9 +47,13 @@ namespace SportApp.gui {
 		}
 
 		public void Update(){
-			List<Team> abstractTeams = SportFactory.GetInstance().GetSport().Teams;
+			List<Team> abstractTeams = SportFactory.GetInstance().GetSport().GetTeams();
 			TeamsTable.ItemsSource = (abstractTeams.Count > 0) ? CreateSpecificTeams(abstractTeams) : null;
 			TeamsTable.Items.Refresh();
+		}
+
+		public Team SelectedTeam() {
+			return (Team) TeamsTable.SelectedItem;
 		}
 	}
 }

@@ -42,8 +42,12 @@ namespace SportApp {
 			return _instance;
 		}
 
-		public void UpdateTeamTable() {
+		public void RefreshTeamTable() {
 			SportContent.TeamsTableContent.Update();
+		}
+
+		public Team SelectedTeam() {
+			return SportContent.TeamsTableContent.SelectedTeam();
 		}
 
 		private void InitObservers() {

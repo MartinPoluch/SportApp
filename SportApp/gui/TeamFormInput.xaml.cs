@@ -28,10 +28,15 @@ namespace SportApp.gui {
 			// not implemented
 		}
 
-		public bool ValidInputs() {
+		public bool ValidInputs(bool update) {
 			try {
 				NewTeam();
-				return (NameInput.Text.Length > 0);
+				Sport sport = SportFactory.GetInstance().GetSport();
+				if (NameInput.Text.Length == 0) {
+					return false;
+				}
+
+				return update || (sport.GetTeam(NameInput.Text) == null);
 			}
 			catch (Exception e) {
 				return false;
@@ -65,6 +70,16 @@ namespace SportApp.gui {
 				Points = int.Parse(PointsInput.Text),
 				Score = ParseScore()
 			};
+		}
+
+		public void fillForm(Team team) {
+			NameInput.IsReadOnly = true;
+			NameInput.Text = team.Name;
+			MatchesInput.Text = team.Matches.ToString();
+			WinsInput.Text = team.Wins.ToString();
+			LosesInput.Text = team.Loses.ToString();
+			PointsInput.Text = team.Points.ToString();
+			ScoreInput.Text = team.Score.ToString();
 		}
 	}
 }

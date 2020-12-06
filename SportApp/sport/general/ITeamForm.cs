@@ -9,9 +9,10 @@ namespace SportApp.sport.general {
 	public interface ITeamForm {
 
 		void showForm();
-		bool ValidInputs();
+		bool ValidInputs(bool update);
 		bool IsSaved();
 		Team NewTeam();
+		void fillForm(Team team);
 
 	}
 }
