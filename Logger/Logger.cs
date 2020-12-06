@@ -11,7 +11,7 @@ using Type = MyLogger.logTypes.Type;
 
 namespace MyLogger
 {
-	public class Logger : Subject {
+	public class Logger : Observable {
 
 		public static RestrictionSetting RestrictionSetting { get; set; }
 			= new RestrictionSetting() {
@@ -24,7 +24,7 @@ namespace MyLogger
 			= new ContentSetting() {
 				ShowDateAndTime = true,
 				ShowCallerMethod = true,
-				ShowCallerClass = true
+				ShowCallerClass = true,
 			};
 
 		private static Logger _instance = null;

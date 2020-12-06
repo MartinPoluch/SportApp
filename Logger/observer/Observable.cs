@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace MyLogger.observer {
 
-	public abstract class Subject : IObservable {
+	public abstract class Observable : IObservable {
 
 		private List<IObserver> _observers;
-		private State _state;
+		private Object _state;
 
-		protected Subject() {
+		protected Observable() {
 			_observers = new List<IObserver>();
 			_state = null;
 		}
@@ -30,11 +30,11 @@ namespace MyLogger.observer {
 			}
 		}
 
-		public void SetState(State state) {
+		public void SetState(Object state) {
 			_state = state;
 		}
 
-		public State GetState() {
+		public Object GetState() {
 			return _state;
 		}
 	}

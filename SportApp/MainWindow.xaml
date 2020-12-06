@@ -4,9 +4,26 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SportApp"
+        xmlns:gui="clr-namespace:SportApp.gui"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <gui:SportList x:Name="SportSelector" Grid.Row="1" Grid.Column="0" DockPanel.Dock="Left"></gui:SportList>
+        <gui:LastLogView x:Name="LastLogView" Grid.Row="2" Grid.Column="1"></gui:LastLogView>
+        <gui:SportContent x:Name="SportContent" Grid.Row="1" Grid.Column="1"></gui:SportContent>
+        <gui:Controls Grid.Row="1" Grid.Column="2"></gui:Controls>
+
     </Grid>
 </Window>

@@ -13,9 +13,9 @@ namespace MyLogger.observer {
 
 		void Notify();
 
-		void SetState(State state);
+		void SetState(Object state);
 
-		State GetState();
+		Object GetState();
 
 	}
 }

@@ -8,7 +8,7 @@ using MyLogger.observer;
 using Type = MyLogger.logTypes.Type;
 
 namespace MyLogger {
-	public class Log : State{
+	public class Log {
 
 		private LogSharedState LogSharedState { get; }
 

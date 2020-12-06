@@ -85,6 +85,10 @@ namespace MyLogger {
 			GetSimpleLoggerInstance().Detach(observer);
 		}
 
+		public static Log LastLog() {
+			return (Log) Logger.GetInstance().GetState();
+		}
+
 		public static void LogInfo(string message, Priority priority = Priority.Low) {
 			Logger.Log(Type.Info, priority, message, NUM_OF_PREV_METHODS);
 		}

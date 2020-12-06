@@ -5,7 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SportApp.sport.general {
-    public interface ISportSelector {
-	    SportType SelectedSport();
-    }
+
+	public interface ITeamForm {
+
+		void showForm();
+		bool ValidInputs();
+		bool IsSaved();
+		Team NewTeam();
+
+	}
 }

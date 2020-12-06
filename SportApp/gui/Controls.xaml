@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="SportApp.gui.Controls"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SportApp.gui"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <!--<ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="auto"></ColumnDefinition>-->
+        </Grid.ColumnDefinitions>
+
+        <local:CommandButton x:Name="CreateTeam" Grid.Row="1" Grid.Column="0"></local:CommandButton>
+        <local:CommandButton x:Name="UpdateTeam" Grid.Row="2" Grid.Column="0"></local:CommandButton>
+        <local:CommandButton x:Name="DeleteTeam" Grid.Row="3" Grid.Column="0"></local:CommandButton>
+        <local:CommandButton x:Name="Generate" Grid.Row="4" Grid.Column="0"></local:CommandButton>
+    </Grid>
+</UserControl>

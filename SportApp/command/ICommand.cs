@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyLogger.observer {
-
-	/**
-	 * Marker interface
-	 */
-	public interface State {
+namespace SportApp.command {
+	public interface ICommand {
+		void Execute();
+		string GetName();
 	}
 }

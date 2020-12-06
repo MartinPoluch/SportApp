@@ -1,33 +1,41 @@
 
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using MyLogger.observer;
+using SportApp.gui;
+using SportApp.sport.football;
 using SportApp.sport.general;
 using SportApp.sport.hockey;
 
 public abstract class SportFactory {
 
-	private static Dictionary<SportType, SportFactory> _instances;
-	private static ISportSelector _sportSelector;
+	private static Dictionary<SportType, SportFactory> _instances = new Dictionary<SportType, SportFactory>();
+	private static SportType selectedSportType;
 
-	protected SportFactory(){
-
+	protected SportFactory() {
 	}
 
-	public void RegisterSportSelector(ISportSelector sportSelector) {
-		_sportSelector = sportSelector;
+	public static void UpdateSportType(SportType sportType) {
+		selectedSportType = sportType;
 	}
 
 	/// 
 	/// <param name="sportType"></param>
-	public SportFactory GetInstance(SportType sportType) {
+	public static SportFactory GetInstance(SportType sportType) {
 		SportFactory factory = null;
 		if (_instances.ContainsKey(sportType)) {
 			factory = _instances[sportType];
 		}
 		else {
 			switch (sportType) {
+
 				case SportType.Hockey: {
 					factory = new HockeyFactory();
+					break;
+				}
+				case SportType.Football: {
+					factory = new FootballFactory();
 					break;
 				}
 				default: {
@@ -39,21 +47,15 @@ public abstract class SportFactory {
 		return factory;
 	}
 
-	public SportFactory GetInstance() {
-		if (_sportSelector != null) {
-			return GetInstance(_sportSelector.SelectedSport());
-		}
-		else {
-			throw new Exception("No sport selector registered");
-		}
+	public static SportFactory GetInstance() {
+		return GetInstance(selectedSportType);
 	}
 
-	public Team CreateTeam(){
-		return null;
-	}
+	public abstract Sport GetSport();
+
+	public abstract ITeamForm CreateTeamForm();
 
 	public ReportDescription CreateReportDescription(){
-
 		return null;
 	}
 

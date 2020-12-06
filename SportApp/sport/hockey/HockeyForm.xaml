@@ -1,0 +1,35 @@
+﻿<Window x:Class="SportApp.sport.hockey.HockeyForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SportApp.sport.hockey"
+        xmlns:gui="clr-namespace:SportApp.gui"
+        mc:Ignorable="d"
+        Title="Hockey form" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <gui:TeamFormInput x:Name="TeamForm" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"></gui:TeamFormInput>
+        <TextBlock Grid.Row="1" Grid.Column="0" Margin="10">Wins overtime:</TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="0" Margin="10">Loses overtime:</TextBlock>
+
+        <TextBox x:Name="WinsOtInput" Grid.Row="1" Grid.Column="1" Margin="10"></TextBox>
+        <TextBox x:Name="LosesOtInput" Grid.Row="2" Grid.Column="1" Margin="10"></TextBox>
+
+        <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+            <Button x:Name="Save" Margin="10" Width="70" Click="SaveTeam">Save</Button>
+            <Button Margin="10" Width="70" IsCancel="True">Cancel</Button>
+        </StackPanel>
+    </Grid>
+</Window>

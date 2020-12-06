@@ -52,8 +52,7 @@
     <Compile Include="observer\IObserver.cs" />
     <Compile Include="observer\observerImpl\ConsoleLogObserver.cs" />
     <Compile Include="observer\observerImpl\FileLogObserver.cs" />
-    <Compile Include="observer\State.cs" />
-    <Compile Include="observer\Subject.cs" />
+    <Compile Include="observer\Observable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="settings\ContentSetting.cs" />
     <Compile Include="settings\RestrictionSetting.cs" />

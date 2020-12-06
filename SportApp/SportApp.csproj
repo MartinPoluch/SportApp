@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{93AF29B5-C60F-4EF8-8E19-4A4E78EA1F85}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>SportApp</RootNamespace>
     <AssemblyName>SportApp</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -34,9 +34,14 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,19 +60,87 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="command\crud\CreateTeamCommand.cs" />
+    <Compile Include="command\crud\CrudCommand.cs" />
+    <Compile Include="command\crud\CrudException.cs" />
+    <Compile Include="command\crud\DeleteTeamCommand.cs" />
+    <Compile Include="command\GenerateReportCommand.cs" />
+    <Compile Include="command\ICommand.cs" />
+    <Compile Include="command\crud\UpdateTeamCommand.cs" />
+    <Compile Include="gui\CommandButton.xaml.cs">
+      <DependentUpon>CommandButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="gui\Controls.xaml.cs">
+      <DependentUpon>Controls.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="gui\LastLogView.xaml.cs">
+      <DependentUpon>LastLogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="gui\SportContent.xaml.cs">
+      <DependentUpon>SportContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="gui\SportInfo.xaml.cs">
+      <DependentUpon>SportInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="gui\TableContent.xaml.cs">
+      <DependentUpon>TableContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="gui\TeamFormInput.xaml.cs">
+      <DependentUpon>TeamFormInput.xaml</DependentUpon>
+    </Compile>
     <Compile Include="report\HtmlReportBuilder.cs" />
     <Compile Include="report\PdfReportBuilder.cs" />
     <Compile Include="report\Report.cs" />
     <Compile Include="report\ReportBuilder.cs" />
     <Compile Include="report\ReportDescription.cs" />
     <Compile Include="report\ReportGenerator.cs" />
-    <Compile Include="sport\general\ISportSelector.cs" />
+    <Compile Include="sport\football\Football.cs" />
+    <Compile Include="sport\football\FootballFactory.cs" />
+    <Compile Include="sport\football\FootballTeam.cs" />
+    <Compile Include="sport\general\ITeamForm.cs" />
+    <Compile Include="sport\general\Score.cs" />
+    <Compile Include="sport\general\Sport.cs" />
     <Compile Include="sport\general\SportFactory.cs" />
     <Compile Include="sport\general\SportType.cs" />
     <Compile Include="sport\general\Team.cs" />
+    <Compile Include="gui\SportList.xaml.cs">
+      <DependentUpon>SportList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="sport\hockey\Hockey.cs" />
     <Compile Include="sport\hockey\HockeyFactory.cs" />
+    <Compile Include="sport\hockey\HockeyForm.xaml.cs">
+      <DependentUpon>HockeyForm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="sport\hockey\HockeyReportDescription.cs" />
     <Compile Include="sport\hockey\HockeyTeam.cs" />
+    <Page Include="gui\CommandButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="gui\Controls.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="gui\LastLogView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="gui\SportContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="gui\SportInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="gui\TableContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="gui\TeamFormInput.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -80,6 +153,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="gui\SportList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="sport\hockey\HockeyForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -107,5 +188,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Logger\Logger.csproj">
+      <Project>{491c1163-2ab9-4cd5-99dc-2d3ecda77a86}</Project>
+      <Name>Logger</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
