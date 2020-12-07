@@ -28,6 +28,17 @@ public class Team {
 		Score = team.Score;
 	}
 
+	public virtual List<string> PropertyValues() {
+		return new List<string>() { 
+			Name, 
+			Matches.ToString(), 
+			Wins.ToString(), 
+			Loses.ToString(), 
+			Points.ToString(), 
+			Score.ToString() 
+		};
+	}
+
 	
 
 }

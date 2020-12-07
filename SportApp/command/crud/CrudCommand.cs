@@ -19,6 +19,8 @@ namespace SportApp.command {
 
 		protected abstract string ErrorMessage();
 
+
+
 		public void Execute() {
 			try {
 				ExecuteAction();

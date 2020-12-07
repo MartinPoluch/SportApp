@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using SportApp.command;
+using SportApp.command.dataGenerator;
 
 namespace SportApp.gui {
 	/// <summary>
@@ -25,7 +26,11 @@ namespace SportApp.gui {
 			CreateTeam.Command = new CreateTeamCommand();
 			UpdateTeam.Command = new UpdateTeamCommand();
 			DeleteTeam.Command = new DeleteTeamCommand();
-			Generate.Command = new GenerateReportCommand();
+
+			DeleteAllTeams.Command = new DeleteAllTeamsCommand();
+			GenerateTeams.Command = new GenerateTeamsCommand();
+			GenerateReport.Command = new GenerateReportCommand();
+
 			DataContext = this;
 		}
 	}

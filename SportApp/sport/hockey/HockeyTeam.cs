@@ -10,9 +10,15 @@ public class HockeyTeam : Team {
 	public int LosesInOvertime { get; set; }
 
 	public HockeyTeam(){
-
 	}
 
 	public HockeyTeam(Team team) : base(team) {
+	}
+
+	public override List<string> PropertyValues() {
+		List<string> properties = base.PropertyValues();
+		properties.Add(WinsInOvertime.ToString());
+		properties.Add(LosesInOvertime.ToString());
+		return properties;
 	}
 }

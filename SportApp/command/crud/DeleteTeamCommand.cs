@@ -13,6 +13,8 @@ namespace SportApp.command {
 		}
 
 		protected override void ExecuteAction() {
+			//TODO, check if team is selected
+			//TODO, if multiple teams are selected than delete all of them
 			Team team = MainWindow.GetInstance().SelectedTeam();
 			Sport sport = SportFactory.GetInstance().GetSport();
 			sport.DeleteTeam(team);

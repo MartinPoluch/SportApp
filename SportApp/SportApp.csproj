@@ -64,7 +64,9 @@
     <Compile Include="command\crud\CrudCommand.cs" />
     <Compile Include="command\crud\CrudException.cs" />
     <Compile Include="command\crud\DeleteTeamCommand.cs" />
+    <Compile Include="command\crud\DeleteAllTeamsCommand.cs" />
     <Compile Include="command\GenerateReportCommand.cs" />
+    <Compile Include="command\crud\GenerateTeamsCommand.cs" />
     <Compile Include="command\ICommand.cs" />
     <Compile Include="command\crud\UpdateTeamCommand.cs" />
     <Compile Include="gui\CommandButton.xaml.cs">
@@ -88,15 +90,19 @@
     <Compile Include="gui\TeamFormInput.xaml.cs">
       <DependentUpon>TeamFormInput.xaml</DependentUpon>
     </Compile>
+    <Compile Include="report\CsvReportBuilder.cs" />
     <Compile Include="report\HtmlReportBuilder.cs" />
-    <Compile Include="report\PdfReportBuilder.cs" />
     <Compile Include="report\Report.cs" />
     <Compile Include="report\ReportBuilder.cs" />
     <Compile Include="report\ReportDescription.cs" />
     <Compile Include="report\ReportGenerator.cs" />
+    <Compile Include="report\ReportParameters.xaml.cs">
+      <DependentUpon>ReportParameters.xaml</DependentUpon>
+    </Compile>
     <Compile Include="sport\football\Football.cs" />
     <Compile Include="sport\football\FootballFactory.cs" />
     <Compile Include="sport\football\FootballTeam.cs" />
+    <Compile Include="sport\general\TeamGenerator.cs" />
     <Compile Include="sport\general\ITeamForm.cs" />
     <Compile Include="sport\general\Score.cs" />
     <Compile Include="sport\general\Sport.cs" />
@@ -111,8 +117,8 @@
     <Compile Include="sport\hockey\HockeyForm.xaml.cs">
       <DependentUpon>HockeyForm.xaml</DependentUpon>
     </Compile>
-    <Compile Include="sport\hockey\HockeyReportDescription.cs" />
     <Compile Include="sport\hockey\HockeyTeam.cs" />
+    <Compile Include="sport\hockey\HockeyTeamGenerator.cs" />
     <Page Include="gui\CommandButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -154,6 +160,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="gui\SportList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="report\ReportParameters.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

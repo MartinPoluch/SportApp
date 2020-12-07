@@ -59,16 +59,17 @@ namespace SportApp.sport.hockey {
 		}
 
 		private HockeyTeam TestHockeyTeam() {
-			return new HockeyTeam {
+			HockeyTeam team = new HockeyTeam {
 				Name = "Test team",
 				Matches = 1,
 				Wins = 2,
 				Loses = 3,
 				Points = 4,
-				Score = new Score(){Plus = 5, Minus = 6},
+				Score = new Score() {Plus = 5, Minus = 6},
 				WinsInOvertime = 7,
 				LosesInOvertime = 8
 			};
+			return (_isSaved) ? team : null;
 		}
 
 		public ITeamForm GetTeamForm() {

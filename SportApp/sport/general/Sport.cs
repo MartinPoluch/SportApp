@@ -51,5 +51,9 @@ namespace SportApp.sport.general {
 		public List<Team> GetTeams() {
 			return Teams.Values.ToList();
 		}
+
+		public void DeleteAllTeams() {
+			Teams.Clear();
+		}
 	}
 }

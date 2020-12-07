@@ -55,8 +55,8 @@ public abstract class SportFactory {
 
 	public abstract ITeamForm CreateTeamForm();
 
-	public ReportDescription CreateReportDescription(){
-		return null;
-	}
+	public abstract TeamGenerator CreateTeamGenerator();
+
+	public abstract ReportDescription CreateReportDescription();
 
 }

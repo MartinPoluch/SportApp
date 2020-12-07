@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
@@ -47,8 +48,15 @@ namespace SportApp.gui {
 		}
 
 		public void Update(){
+			TeamsTable.SelectedItem = null;
 			List<Team> abstractTeams = SportFactory.GetInstance().GetSport().GetTeams();
-			TeamsTable.ItemsSource = (abstractTeams.Count > 0) ? CreateSpecificTeams(abstractTeams) : null;
+			if (abstractTeams.Count > 0) {
+				TeamsTable.ItemsSource = CreateSpecificTeams(abstractTeams);
+				//(TeamsTable.ItemsSource as DataView).Sort = "Points";
+			}
+			else {
+				TeamsTable.ItemsSource = null;
+			}
 			TeamsTable.Items.Refresh();
 		}
 

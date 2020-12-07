@@ -16,5 +16,13 @@ namespace SportApp.sport.football {
 		public override ITeamForm CreateTeamForm() {
 			throw new NotImplementedException();
 		}
+
+		public override TeamGenerator CreateTeamGenerator() {
+			throw new NotImplementedException();
+		}
+
+		public override ReportDescription CreateReportDescription() {
+			throw new NotImplementedException();
+		}
 	}
 }
