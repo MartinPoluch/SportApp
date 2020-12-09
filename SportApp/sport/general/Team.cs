@@ -29,16 +29,16 @@ public class Team {
 	}
 
 	public virtual List<string> PropertyValues() {
-		return new List<string>() { 
-			Name, 
-			Matches.ToString(), 
-			Wins.ToString(), 
-			Loses.ToString(), 
-			Points.ToString(), 
-			Score.ToString() 
+		return new List<string>() {
+			Name,
+			Matches.ToString(),
+			Wins.ToString(),
+			Loses.ToString(),
+			Points.ToString(),
+			Score.ToString()
 		};
 	}
 
-	
+
 
 }

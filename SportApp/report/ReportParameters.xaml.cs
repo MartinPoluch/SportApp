@@ -28,6 +28,7 @@ namespace SportApp.report {
 				new CsvReportBuilder(),
 			};
 			ReportFormats.ItemsSource = builders;
+			ReportFormats.SelectedIndex = 0;
 			IsSaved = false;
 		}
 
