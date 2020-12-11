@@ -16,7 +16,7 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Label Grid.Row="0">Info about sport</Label>
-        <TextBox Grid.Row="1" x:Name="InfoText" AcceptsReturn="True" TextWrapping="Wrap" IsReadOnly="True"/>
+        <Label Grid.Row="0" FontSize="15" FontWeight="Bold" Margin="20, 0, 0, 0">Info about sport</Label>
+        <TextBox Grid.Row="1" x:Name="InfoText" AcceptsReturn="True" TextWrapping="Wrap" IsReadOnly="True" Margin="20, 5, 20, 20"/>
     </Grid>
 </UserControl>

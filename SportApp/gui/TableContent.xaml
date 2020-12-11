@@ -7,6 +7,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <DataGrid x:Name="TeamsTable" AutoGenerateColumns="True" GridLinesVisibility="None" IsReadOnly="True"></DataGrid>
+        <DataGrid x:Name="TeamsTable" AutoGenerateColumns="True" GridLinesVisibility="None" IsReadOnly="True" MouseDoubleClick="UpdateTeam" PreviewKeyDown="DeleteTeam" ColumnWidth="*" ></DataGrid>
     </Grid>
 </UserControl>

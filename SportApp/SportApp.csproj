@@ -65,10 +65,12 @@
     <Compile Include="command\crud\CrudException.cs" />
     <Compile Include="command\crud\DeleteTeamCommand.cs" />
     <Compile Include="command\crud\DeleteAllTeamsCommand.cs" />
+    <Compile Include="command\ExportSportCommand.cs" />
     <Compile Include="command\GenerateReportCommand.cs" />
     <Compile Include="command\crud\GenerateTeamsCommand.cs" />
     <Compile Include="command\ICommand.cs" />
     <Compile Include="command\crud\UpdateTeamCommand.cs" />
+    <Compile Include="command\ImportSportCommand.cs" />
     <Compile Include="gui\CommandButton.xaml.cs">
       <DependentUpon>CommandButton.xaml</DependentUpon>
     </Compile>

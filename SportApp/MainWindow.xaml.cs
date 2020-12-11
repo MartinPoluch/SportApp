@@ -50,6 +50,10 @@ namespace SportApp {
 			return SportContent.TeamsTableContent.SelectedTeam();
 		}
 
+		public List<Team> SelectedTeams() {
+			return SportContent.TeamsTableContent.SelectedTeams();
+		}
+
 		private void InitObservers() {
 			//observers for sport selection
 			SportSelector.Attach(SportContent);

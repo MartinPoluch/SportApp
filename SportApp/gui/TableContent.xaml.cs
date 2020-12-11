@@ -1,24 +1,10 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Reflection;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using MyLogger;
 using MyLogger.observer;
-using SportApp.sport.hockey;
+using SportApp.command;
 
 namespace SportApp.gui {
 	/// <summary>
@@ -47,6 +33,8 @@ namespace SportApp.gui {
 			return specificTeams;
 		}
 
+
+
 		public void Update(){
 			TeamsTable.SelectedItem = null;
 			List<Team> abstractTeams = SportFactory.GetInstance().GetSport().GetTeams();
@@ -62,6 +50,25 @@ namespace SportApp.gui {
 
 		public Team SelectedTeam() {
 			return (Team) TeamsTable.SelectedItem;
+		}
+
+		public List<Team> SelectedTeams() {
+			List<Team> selectedTeams = new List<Team>();
+			foreach (var row in TeamsTable.SelectedItems) {
+				Team team = (Team)row;
+				selectedTeams.Add(team);
+			}
+			return selectedTeams;
+		}
+
+		private void UpdateTeam(object sender, MouseButtonEventArgs e) {
+			new UpdateTeamCommand().Execute();
+		}
+
+		private void DeleteTeam(object sender, KeyEventArgs e) {
+			if (Key.Delete == e.Key) {
+				new DeleteTeamCommand().Execute();
+			}
 		}
 	}
 }

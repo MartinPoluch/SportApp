@@ -17,8 +17,7 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Label x:Name="Header" Grid.Row="0" Grid.Column="0"></Label>
-        
+        <Label x:Name="Header" Grid.Row="0" Grid.Column="0" FontSize="30" FontWeight="Bold"></Label>
 
         <TabControl Grid.Row="1" Grid.Column="0">
             <TabItem Header="Teams Table">

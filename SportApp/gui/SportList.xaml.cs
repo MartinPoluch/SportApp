@@ -26,23 +26,19 @@ namespace SportApp.gui {
 
 		public SportType SelectedSportType { get; set; }
 
-
 		public SportList() {
 			InitializeComponent();
 			_observers = new List<IObserver>();
 			SelectedSportType = DefaultSportType;
-			//TODO, replaca grid with list view and add sports dynamically from enum values
+			Sports.ItemsSource = Enum.GetValues(typeof(SportType));
 			DataContext = this;
 		}
 
-		private void SelectHockey(object sender, RoutedEventArgs e) {
-			SelectedSportType = SportType.Hockey;
-			Notify();
-		}
-
-		private void SelectFootball(object sender, RoutedEventArgs e) {
-			SelectedSportType = SportType.Football;
-			Notify();
+		private void SelectSport(object sender, MouseButtonEventArgs e) {
+			if (Sports.SelectedItem != null) {
+				SelectedSportType = (SportType)Sports.SelectedItem;
+				Notify();
+			}
 		}
 
 		public void Attach(IObserver observer) {

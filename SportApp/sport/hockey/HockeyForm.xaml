@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:SportApp.sport.hockey"
         xmlns:gui="clr-namespace:SportApp.gui"
         mc:Ignorable="d"
-        Title="Hockey form" Height="450" Width="800">
+        Title="Hockey form" Height="400" Width="600">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>

@@ -23,7 +23,7 @@
         <gui:SportList x:Name="SportSelector" Grid.Row="1" Grid.Column="0" DockPanel.Dock="Left"></gui:SportList>
         <gui:LastLogView x:Name="LastLogView" Grid.Row="2" Grid.Column="1"></gui:LastLogView>
         <gui:SportContent x:Name="SportContent" Grid.Row="1" Grid.Column="1"></gui:SportContent>
-        <gui:Controls Grid.Row="1" Grid.Column="2"></gui:Controls>
+        <gui:Controls Grid.Row="1" Grid.Column="2" Margin="10"></gui:Controls>
 
     </Grid>
 </Window>

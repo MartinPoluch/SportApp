@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:SportApp.gui"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+    <Grid Margin="0, 50, 0, 0">
+
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
@@ -19,13 +20,10 @@
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"></ColumnDefinition>
-            <!--<ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="auto"></ColumnDefinition>-->
         </Grid.ColumnDefinitions>
 
-        <GroupBox Grid.Row="0" Grid.Column="0">
+        <GroupBox Header="CRUD operations" Grid.Row="1" Grid.Column="0" Margin="0, 10, 0, 30">
             <Grid>
-
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"></RowDefinition>
                     <RowDefinition Height="auto"></RowDefinition>
@@ -39,18 +37,20 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
+
+                <local:CommandButton x:Name="CreateTeam" Grid.Row="1" Grid.Column="0" Width="120" Margin="5"></local:CommandButton>
+                <local:CommandButton x:Name="UpdateTeam" Grid.Row="2" Grid.Column="0" Margin="5"></local:CommandButton>
+                <local:CommandButton x:Name="DeleteTeam" Grid.Row="3" Grid.Column="0" Margin="5"></local:CommandButton>
+
+                <local:CommandButton x:Name="GenerateTeams" Grid.Row="4" Grid.Column="0" Margin="5, 20, 5, 5"></local:CommandButton>
+                <local:CommandButton x:Name="DeleteAllTeams" Grid.Row="5" Grid.Column="0" Margin="5"></local:CommandButton>
             </Grid>
             
         </GroupBox>
 
-        <local:CommandButton x:Name="CreateTeam" Grid.Row="1" Grid.Column="0"></local:CommandButton>
-        <local:CommandButton x:Name="UpdateTeam" Grid.Row="2" Grid.Column="0"></local:CommandButton>
-        <local:CommandButton x:Name="DeleteTeam" Grid.Row="3" Grid.Column="0"></local:CommandButton>
-
-        <local:CommandButton x:Name="GenerateTeams" Grid.Row="4" Grid.Column="0"></local:CommandButton>
-        <local:CommandButton x:Name="DeleteAllTeams" Grid.Row="5" Grid.Column="0"></local:CommandButton>
-        <local:CommandButton x:Name="GenerateReport" Grid.Row="6" Grid.Column="0"></local:CommandButton>
-        
+        <local:CommandButton x:Name="GenerateReport" Grid.Row="2" Grid.Column="0" Margin="5"></local:CommandButton>
+        <local:CommandButton x:Name="ImportSport" Grid.Row="3" Grid.Column="0" Margin="5"></local:CommandButton>
+        <local:CommandButton x:Name="ExportSport" Grid.Row="4" Grid.Column="0" Margin="5"></local:CommandButton>
 
     </Grid>
 </UserControl>

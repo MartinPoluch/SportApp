@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MyLogger;
 using SportApp.sport.general;
 
 namespace SportApp.command {
@@ -13,8 +14,12 @@ namespace SportApp.command {
 		}
 
 		protected override void ExecuteAction() {
-			ITeamForm form = SportFactory.GetInstance().CreateTeamForm();
 			Team team = MainWindow.GetInstance().SelectedTeam();
+			if (team == null) {
+				throw new CrudException("No team selected.");
+			}
+
+			ITeamForm form = SportFactory.GetInstance().CreateTeamForm();
 			form.fillForm(team);
 			form.showForm();
 			if (form.IsSaved()) {
