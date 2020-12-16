@@ -20,7 +20,7 @@ namespace SportApp.sport.general {
 			Info = info;
 		}
 
-		public bool AddNewTeam(Team team) {
+		public virtual bool AddNewTeam(Team team) {
 			if (Teams.ContainsKey(team.Name)) {
 				return false; // name is not unique
 			}
@@ -30,7 +30,7 @@ namespace SportApp.sport.general {
 			}
 		}
 
-		public bool UpdateTeam(Team team) {
+		public virtual bool UpdateTeam(Team team) {
 			if (Teams.ContainsKey(team.Name)) {
 				Teams[team.Name] = team;
 				return true;
@@ -40,19 +40,21 @@ namespace SportApp.sport.general {
 			}
 		}
 
-		public bool DeleteTeam(Team team) {
+		public virtual bool DeleteTeam(Team team) {
 			return Teams.Remove(team.Name);
 		}
 
-		public Team GetTeam(string name) {
+		public virtual Team GetTeam(string name) {
 			return (Teams.ContainsKey(name)) ? Teams[name] : null;
 		}
 
-		public List<Team> GetTeams() {
-			return Teams.Values.ToList();
+		public virtual List<Team> GetTeams() {
+			return Teams.Values
+				.OrderBy(x => x.Points)
+				.ToList();
 		}
 
-		public void DeleteAllTeams() {
+		public virtual void DeleteAllTeams() {
 			Teams.Clear();
 		}
 	}

@@ -14,8 +14,7 @@
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -51,6 +50,7 @@
         <local:CommandButton x:Name="GenerateReport" Grid.Row="2" Grid.Column="0" Margin="5"></local:CommandButton>
         <local:CommandButton x:Name="ImportSport" Grid.Row="3" Grid.Column="0" Margin="5"></local:CommandButton>
         <local:CommandButton x:Name="ExportSport" Grid.Row="4" Grid.Column="0" Margin="5"></local:CommandButton>
+        <local:CommandButton x:Name="ShowLogs" Grid.Row="5" Grid.Column="0" VerticalAlignment="Bottom" Margin="5"></local:CommandButton>
 
     </Grid>
 </UserControl>

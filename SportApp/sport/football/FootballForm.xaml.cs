@@ -13,16 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using SportApp.sport.general;
 
-namespace SportApp.sport.hockey {
+namespace SportApp.sport.football {
 	/// <summary>
-	/// Interaction logic for HockeyForm.xaml
+	/// Interaction logic for FootballForm.xaml
 	/// </summary>
-	public partial class HockeyForm : Window, ITeamForm {
+	public partial class FootballForm : Window, ITeamForm {
 
 		private bool _isSaved;
 		private bool _update;
 
-		public HockeyForm() {
+		public FootballForm() {
 			InitializeComponent();
 			_isSaved = false;
 			_update = false;
@@ -46,23 +46,28 @@ namespace SportApp.sport.hockey {
 			}
 		}
 
+		private ITeamForm GetTeamForm() {
+			return TeamForm;
+		}
+
 		public bool IsSaved() {
 			return _isSaved;
 		}
 
 		public Team NewTeam() {
-			HockeyTeam team = new HockeyTeam(GetTeamForm().NewTeam()) {
-				WinsInOvertime = int.Parse(WinsOtInput.Text),
-				LosesInOvertime = int.Parse(LosesOtInput.Text)
+			return new FootballTeam(GetTeamForm().NewTeam()) {
+				Draws = int.Parse(Draws.Text),
 			};
-			return team;
 		}
 
-		public ITeamForm GetTeamForm() {
-			return TeamForm;
+		public void fillForm(Team team) {
+			_update = true;
+			GetTeamForm().fillForm(team);
+			FootballTeam footballTeam = (FootballTeam)team;
+			Draws.Text = footballTeam.Draws.ToString();
 		}
 
-		public void SaveTeam(object sender, RoutedEventArgs e) {
+		private void SaveTeam(object sender, RoutedEventArgs e) {
 			try {
 				if (ValidInputs(_update)) {
 					_isSaved = true;
@@ -76,14 +81,6 @@ namespace SportApp.sport.hockey {
 				MessageBox.Show(exception.Message, "Wrong input", MessageBoxButton.OK, MessageBoxImage.Error);
 
 			}
-		}
-
-		public void fillForm(Team team) {
-			_update = true;
-			GetTeamForm().fillForm(team);
-			HockeyTeam hockeyTeam = (HockeyTeam)team;
-			WinsOtInput.Text = hockeyTeam.WinsInOvertime.ToString();
-			LosesOtInput.Text = hockeyTeam.LosesInOvertime.ToString();
 		}
 	}
 }

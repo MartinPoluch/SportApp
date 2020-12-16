@@ -8,21 +8,24 @@ using SportApp.sport.general;
 namespace SportApp.sport.football {
 	public class FootballFactory : SportFactory{
 
+		private static readonly Football _football = new Football();
+
 		public override Sport GetSport() {
-			string info = "TODO write some info about football";
-			return new Football("Football", info);
+			return _football;
 		}
 
 		public override ITeamForm CreateTeamForm() {
-			throw new NotImplementedException();
+			return new FootballForm();
 		}
 
 		public override TeamGenerator CreateTeamGenerator() {
-			throw new NotImplementedException();
+			return new FootballTeamGenerator();
 		}
 
 		public override ReportDescription CreateReportDescription() {
-			throw new NotImplementedException();
+			return new ReportDescription(
+				_football,
+				new[] { "Name", "Matches", "Wins", "Loses", "Points", "Score", "Draws" });
 		}
 	}
 }

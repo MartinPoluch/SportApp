@@ -23,6 +23,8 @@ namespace SportApp {
 	/// </summary>
 	public partial class MainWindow : Window {
 
+		private static readonly string LogFile = @"C:\Users\uzivatel\Desktop\data\logs.txt";
+
 		public string LastLogMessage {
 			get {
 				return LoggerFacade.LastLog().ToString();
@@ -63,8 +65,9 @@ namespace SportApp {
 
 			//observers for logger
 			LoggerFacade.RegisterConsoleLogObserver();
-			//LoggerFacade.RegisterFileLogObserver();
+			LoggerFacade.RegisterFileLogObserver(LogFile);
 			LoggerFacade.RegisterObserver(LastLogView);
+			LoggerFacade.RegisterObserver(AllLogs.GetInstance());
 		}
 
 	}

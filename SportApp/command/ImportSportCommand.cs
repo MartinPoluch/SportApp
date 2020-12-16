@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace SportApp.command {
 	public class ImportSportCommand : ICommand {
 		public void Execute() {
-			//TODO
+			throw new NotImplementedException("Import is not implemented.");
 		}
 
 		public string GetName() {

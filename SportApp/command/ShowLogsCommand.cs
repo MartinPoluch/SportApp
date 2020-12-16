@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SportApp.gui;
 
 namespace SportApp.command {
-	public class ExportSportCommand : ICommand {
+	public class ShowLogsCommand : ICommand {
+
 		public void Execute() {
-			throw new NotImplementedException("Export is not implemented.");
+			AllLogs.GetInstance().Show();
 		}
 
 		public string GetName() {
-			return "Export SPort";
+			return "Show logs";
 		}
 	}
 }

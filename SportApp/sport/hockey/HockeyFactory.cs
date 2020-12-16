@@ -9,15 +9,13 @@ namespace SportApp.sport.hockey {
 
 	public class HockeyFactory : SportFactory {
 
-		private static readonly Sport Hockey = new Hockey(
-			"NHL", 
-			"Some info about hockey");
+		private static readonly Sport _hockey = new Hockey();
 
 		public HockeyFactory() {
 		}
 
 		public override Sport GetSport() {
-			return Hockey;
+			return _hockey;
 		}
 
 		public override ITeamForm CreateTeamForm() {
@@ -30,7 +28,7 @@ namespace SportApp.sport.hockey {
 
 		public override ReportDescription CreateReportDescription() {
 			return new ReportDescription(
-				Hockey,
+				_hockey,
 				new[] {"Name", "Matches", "Wins", "Loses", "Points", "Score", "Wins OT", "Loses OT"});
 		}
 	}

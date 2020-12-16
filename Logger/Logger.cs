@@ -23,8 +23,8 @@ namespace MyLogger
 		public static ContentSetting ContentSetting { get; set; }
 			= new ContentSetting() {
 				ShowDateAndTime = true,
-				ShowCallerMethod = true,
-				ShowCallerClass = true,
+				ShowCallerMethod = false,
+				ShowCallerClass = false,
 			};
 
 		private static Logger _instance = null;

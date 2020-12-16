@@ -29,7 +29,7 @@ public abstract class SportFactory {
 		}
 		else {
 			switch (sportType) {
-
+				//TODO, add register method and register all factories from main class
 				case SportType.Hockey: {
 					factory = new HockeyFactory();
 					break;

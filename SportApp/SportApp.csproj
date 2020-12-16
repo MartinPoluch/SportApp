@@ -71,6 +71,10 @@
     <Compile Include="command\ICommand.cs" />
     <Compile Include="command\crud\UpdateTeamCommand.cs" />
     <Compile Include="command\ImportSportCommand.cs" />
+    <Compile Include="command\ShowLogsCommand.cs" />
+    <Compile Include="gui\AllLogs.xaml.cs">
+      <DependentUpon>AllLogs.xaml</DependentUpon>
+    </Compile>
     <Compile Include="gui\CommandButton.xaml.cs">
       <DependentUpon>CommandButton.xaml</DependentUpon>
     </Compile>
@@ -103,7 +107,11 @@
     </Compile>
     <Compile Include="sport\football\Football.cs" />
     <Compile Include="sport\football\FootballFactory.cs" />
+    <Compile Include="sport\football\FootballForm.xaml.cs">
+      <DependentUpon>FootballForm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="sport\football\FootballTeam.cs" />
+    <Compile Include="sport\football\FootballTeamGenerator.cs" />
     <Compile Include="sport\general\TeamGenerator.cs" />
     <Compile Include="sport\general\ITeamForm.cs" />
     <Compile Include="sport\general\Score.cs" />
@@ -121,6 +129,10 @@
     </Compile>
     <Compile Include="sport\hockey\HockeyTeam.cs" />
     <Compile Include="sport\hockey\HockeyTeamGenerator.cs" />
+    <Page Include="gui\AllLogs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="gui\CommandButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -166,6 +178,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="report\ReportParameters.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="sport\football\FootballForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

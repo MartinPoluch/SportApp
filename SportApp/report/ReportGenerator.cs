@@ -5,7 +5,7 @@ using System.IO;
 
 public class ReportGenerator {
 
-	private static readonly string DefaultSaveDirectory = @"C:\Users\uzivatel\Desktop\reports";
+	private static readonly string DefaultSaveDirectory = @"C:\Users\uzivatel\Desktop\data\reports";
 
 	public ReportBuilder ReportBuilder { get; set; }
 

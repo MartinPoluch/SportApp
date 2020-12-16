@@ -25,6 +25,7 @@ namespace SportApp.gui {
 		public Controls() {
 			DataContext = this;
 			InitializeComponent();
+
 			CreateTeam.Command = new CreateTeamCommand();
 			UpdateTeam.Command = new UpdateTeamCommand();
 			DeleteTeam.Command = new DeleteTeamCommand();
@@ -35,7 +36,7 @@ namespace SportApp.gui {
 			ImportSport.Command = new ImportSportCommand();
 			ExportSport.Command = new ExportSportCommand();
 
-			
+			ShowLogs.Command = new ShowLogsCommand();
 		}
 	}
 }
