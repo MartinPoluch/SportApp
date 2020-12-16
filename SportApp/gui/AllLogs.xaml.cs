@@ -20,7 +20,7 @@ namespace SportApp.gui {
 	/// </summary>
 	public partial class AllLogs : Window, IObserver {
 
-		private static List<Log> Logs = new List<Log>();
+		private static readonly List<Log> Logs = new List<Log>();
 		private static AllLogs _instance = null;
 
 		private AllLogs() {

@@ -51,6 +51,7 @@ namespace SportApp.sport.general {
 		public virtual List<Team> GetTeams() {
 			return Teams.Values
 				.OrderBy(x => x.Points)
+				.Reverse()
 				.ToList();
 		}
 

@@ -25,12 +25,6 @@ namespace SportApp {
 
 		private static readonly string LogFile = @"C:\Users\uzivatel\Desktop\data\logs.txt";
 
-		public string LastLogMessage {
-			get {
-				return LoggerFacade.LastLog().ToString();
-			}
-		}
-
 		private static MainWindow _instance;
 
 		public MainWindow() {
